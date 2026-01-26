@@ -1,35 +1,32 @@
-# Wildfire Risk Prediction
+IN ORDER TO RUN:
+- Run "pip install -r requirements.txt" in the terminal
+- Then, run "main.py"
 
-End-to-end machine learning pipeline to predict daily wildfire risk using real climate, vegetation, and fire detection data.
+WILDFIRE RISK PREDICTION:
+- End-to-end machine learning pipeline to predict daily wildfire risk using real climate, vegetation, and fire detection data.
 
-## Data Sources
+DATA SOURCES:
 - NASA FIRMS (fire detections)
 - ERA5 (weather)
 - MODIS NDVI (vegetation)
 - US Drought Monitor
 
-## Problem
-Binary classification: predict probability of wildfire occurrence for a given location and day.
-
-## Features
+FEATURES:
 - Temperature
 - Wind speed
 - Precipitation
 - NDVI
 - Drought index
 
-## Model
-Feedforward neural network implemented in PyTorch.
+MODEL:
+- Feedforward neural network implemented in PyTorch.
 
-## Evaluation
-ROC-AUC, Precision-Recall AUC, calibration analysis.
+EVALUATION:
+- ROC-AUC, Precision-Recall AUC, calibration analysis.
 
-## Pipeline
+PIPELINE:
 1. Download raw datasets
 2. Spatial + temporal joins
 3. Feature engineering
 4. Model training
 5. Evaluation
-
-## Run
-python main.py
