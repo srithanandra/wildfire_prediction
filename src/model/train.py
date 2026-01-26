@@ -1,7 +1,8 @@
 import torch
 import pandas as pd
-from src.model.model import FireRiskModel
-from src.config import PROCESSED_DIR
+from model import FireRiskModel
+
+PROCESSED_DIR = 'data/processed'
 
 data = pd.read_csv(f'{PROCESSED_DIR}/dataset.csv')
 X = torch.tensor(data.drop(columns=['label']).values, dtype=torch.float32)
