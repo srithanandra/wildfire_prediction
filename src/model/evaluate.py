@@ -16,3 +16,6 @@ def main():
         preds = model(X).numpy().ravel()
 
     print(roc_auc_score(y, preds))
+
+def predict():
+    pass
