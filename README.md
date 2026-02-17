@@ -1,3 +1,5 @@
+*** Wildfire Prediction ***
+
 IN ORDER TO RUN:
 - Run `pip install -r requirements.txt` in the terminal
 - Then, run `python main.py`
