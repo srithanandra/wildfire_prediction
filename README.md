@@ -1,6 +1,6 @@
 IN ORDER TO RUN:
-- Run "pip install -r requirements.txt" in the terminal
-- Then, run "main.py"
+- Run `pip install -r requirements.txt` in the terminal
+- Then, run `python main.py`
 
 WILDFIRE RISK PREDICTION:
 - End-to-end machine learning pipeline to predict daily wildfire risk using real climate, vegetation, and fire detection data.
