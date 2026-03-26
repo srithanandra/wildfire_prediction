@@ -1,3 +1,4 @@
+*.csv filter=lfs diff=lfs merge=lfs -text
 data/raw/weather.csv filter=lfs diff=lfs merge=lfs -text
 data/processed/dataset.csv filter=lfs diff=lfs merge=lfs -text
 data/raw/fires.csv filter=lfs diff=lfs merge=lfs -text
