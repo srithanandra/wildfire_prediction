@@ -3,11 +3,11 @@ from time import time
 
 start_time = time()
 
-# download.download_fires.main()
+download.download_fires.main()
 print('Downloaded fires')
-#download.download_weather.main()
+download.download_weather.main()
 print('Downloaded weather')
-# preprocess.build_features.main()
+preprocess.build_features.main()
 print('Built features')
 model.train.main()
 print('Trained model')
