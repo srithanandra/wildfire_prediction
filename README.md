@@ -25,7 +25,7 @@ End-to-end machine learning pipeline to predict daily wildfire risk from fire de
 From the project root:
 
 ```powershell
-cd c:\Users\andra\Desktop\Projects\wildfire_prediction
+cd <path-to-repo>\wildfire_prediction
 pip install -r requirements.txt
 ```
 
@@ -36,7 +36,7 @@ Optional (recommended): use a virtual environment/conda environment before insta
 From the project root:
 
 ```powershell
-$env:PYTHONPATH = "c:\Users\andra\Desktop\Projects\wildfire_prediction"
+$env:PYTHONPATH = (Get-Location).Path
 python src\main\main.py
 ```
 
@@ -52,7 +52,7 @@ The pipeline runs:
 From the project root:
 
 ```powershell
-$env:PYTHONPATH = "c:\Users\andra\Desktop\Projects\wildfire_prediction"
+$env:PYTHONPATH = (Get-Location).Path
 python -c "import src.download.download_fires as m; m.main()"
 python -c "import src.download.download_weather as m; m.main()"
 python -c "import src.preprocess.build_features as m; m.main()"
