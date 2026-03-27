@@ -2,11 +2,15 @@ import torch
 import pandas as pd
 from src.model.model import FireRiskModel
 from pathlib import Path
+import sqlite3
 
 def main():
     project_root = Path(__file__).resolve().parents[2]
     data_dir = project_root / "data" / "processed"
-    data = pd.read_csv(data_dir / "dataset.csv")
+
+    with sqlite3.connect(data_dir / "dataset.db") as conn:
+        data = pd.read_sql_query("SELECT * FROM dataset", conn)
+
     X = torch.tensor(data.drop(columns=['label']).values, dtype=torch.float32)
     y = torch.tensor(data['label'].values, dtype=torch.float32).unsqueeze(1)
 

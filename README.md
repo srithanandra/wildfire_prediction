@@ -42,7 +42,7 @@ python src\main\main.py
 
 The pipeline runs:
 1. Download fires (`src/download/download_fires.py`)
-2. Build weather CSV from NetCDF (`src/download/download_weather.py`)
+2. Build weather SQLite table from NetCDF (`src/download/download_weather.py`)
 3. Build features/labels (`src/preprocess/build_features.py`)
 4. Train model (`src/model/train.py`)
 5. Evaluate model (`src/model/evaluate.py`)
@@ -62,9 +62,9 @@ python -c "import src.model.evaluate as m; m.main()"
 
 ## Outputs
 
-- `data/raw/fires.csv`
-- `data/raw/weather.csv`
-- `data/processed/dataset.csv`
+- `data/raw/fires.db` (`fires` table)
+- `data/raw/weather.db` (`weather` table)
+- `data/processed/dataset.db` (`dataset` table)
 - `data/processed/model.pt`
 
 ## Troubleshooting

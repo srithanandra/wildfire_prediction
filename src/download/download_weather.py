@@ -1,5 +1,6 @@
 import xarray as xr
 from pathlib import Path
+import sqlite3
 
 def main():
     project_root = Path(__file__).resolve().parents[2]
@@ -14,6 +15,12 @@ def main():
     print("Available variables:", list(dataset.data_vars))
 
     dataframe = dataset[['t2m', 'tp']].to_dataframe().reset_index()
-    dataframe.to_csv(data_dir / "raw" / "weather.csv", index=False)
 
-    print(f"Completed: Data saved to weather.csv")
+    output_db = data_dir / "raw" / "weather.db"
+    conn = sqlite3.connect(output_db)
+    try:
+        dataframe.to_sql("weather", conn, if_exists="replace", index=False)
+    finally:
+        conn.close()
+
+    print("Completed: Data saved to weather.db")
