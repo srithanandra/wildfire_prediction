@@ -1,9 +1,12 @@
 import torch
 import pandas as pd
 from src.model.model import FireRiskModel
+from pathlib import Path
 
 def main():
-    data = pd.read_csv(f'..\\..\\data\\processed\\dataset.csv')
+    project_root = Path(__file__).resolve().parents[2]
+    data_dir = project_root / "data" / "processed"
+    data = pd.read_csv(data_dir / "dataset.csv")
     X = torch.tensor(data.drop(columns=['label']).values, dtype=torch.float32)
     y = torch.tensor(data['label'].values, dtype=torch.float32).unsqueeze(1)
 
@@ -24,4 +27,4 @@ def main():
         loss.backward()
         optimizer.step()
 
-    torch.save(model.state_dict(), f'..\\..\\data\\processed\\model.pt')
+    torch.save(model.state_dict(), data_dir / "model.pt")
