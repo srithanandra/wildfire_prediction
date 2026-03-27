@@ -47,28 +47,13 @@ The pipeline runs:
 4. Train model (`src/model/train.py`)
 5. Evaluate model (`src/model/evaluate.py`)
 
-## Run Individual Steps
-
-From the project root:
-
-```powershell
-$env:PYTHONPATH = (Get-Location).Path
-python -c "import src.download.download_fires as m; m.main()"
-python -c "import src.download.download_weather as m; m.main()"
-python -c "import src.preprocess.build_features as m; m.main()"
-python -c "import src.model.train as m; m.main()"
-python -c "import src.model.evaluate as m; m.main()"
-```
-
 ## Outputs
-
 - `data/raw/fires.csv`
 - `data/raw/weather.csv`
 - `data/processed/dataset.csv`
 - `data/processed/model.pt`
 
 ## Troubleshooting
-
 - `ModuleNotFoundError: No module named 'src'`
   - Run from project root and set `PYTHONPATH` as shown above.
 - `Cannot save file into a non-existent directory`
