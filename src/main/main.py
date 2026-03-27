@@ -1,17 +1,21 @@
-import download.download_fires, download.download_weather, model.train, model.evaluate, preprocess.build_features
+import src.download.download_fires as download_fires
+import src.download.download_weather as download_weather
+import src.model.train as train
+import src.model.evaluate as evaluate
+import src.preprocess.build_features as build_features
 from time import time
 
 start_time = time()
 
-download.download_fires.main()
+download_fires.main()
 print('Downloaded fires')
-download.download_weather.main()
+download_weather.main()
 print('Downloaded weather')
-preprocess.build_features.main()
+build_features.main()
 print('Built features')
-model.train.main()
+train.main()
 print('Trained model')
-model.evaluate.main()
+evaluate.main()
 print('COMPLETED PROCESS')
 
 end_time = time()
