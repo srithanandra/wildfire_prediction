@@ -17,6 +17,9 @@ def main():
     device = 'cuda' if torch.cuda.is_available() else 'cpu' # NEED TO GET PROPER ENVIRONMENT SET UP FOR USING CUDA
     print(f'USING {device} device')
 
+    X = X.to(device)
+    y = y.to(device)
+
     model = FireRiskModel(X.shape[1])
     optimizer = torch.optim.Adam(model.parameters(), lr=0.01)
     loss_fn = torch.nn.BCELoss()
