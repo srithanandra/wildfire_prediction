@@ -26,7 +26,7 @@ def main():
 
     model.to(device)
 
-    for _ in range(20):
+    for _ in range(10):
         optimizer.zero_grad()
         preds = model(X)
         loss = loss_fn(preds, y)
